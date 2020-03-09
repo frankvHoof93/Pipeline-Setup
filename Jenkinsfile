@@ -7,7 +7,6 @@ pipeline {
             }
         }
         stage('Parallel Stage') {
-            failFast true
             parallel {
                 stage('Branch A') {
                     agent any
