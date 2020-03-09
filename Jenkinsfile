@@ -1,6 +1,20 @@
 pipeline {
     agent any
     stages {
+		stage('Parallel Tests') {
+            parallel {
+                stage('Test On Windows') {
+                    steps {
+                        sh 'echo "Fail!"'
+                    }
+                }
+                stage('Test On Linux') {
+                    steps {
+                        sh 'echo "Fail!"'
+                    }
+                }
+            }
+        }
         stage('Test') {
             steps {
                 sh 'echo "Fail!"; exit 1'
