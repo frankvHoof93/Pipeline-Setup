@@ -37,5 +37,10 @@ pipeline {
                 }
             }
         }
+        stage('Final Stage') {
+            steps {
+                echo 'This stage will be executed last.'
+            }
+        }
     }
 }
