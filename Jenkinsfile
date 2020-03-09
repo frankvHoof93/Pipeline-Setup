@@ -9,9 +9,9 @@ pipeline {
             }
         }
         stage('Parallel Stage') {
+            unstash 'source'
             parallel {
                 stage('Branch A') {
-                    unstash 'source'
                     agent any
                     steps {
                         echo "On Branch A"
