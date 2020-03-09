@@ -5,11 +5,9 @@ pipeline {
             steps {
                 echo 'This stage will be executed first.'
                 checkout scm
-                stash 'source'
             }
         }
         stage('Parallel Stage') {
-            unstash 'source'
             parallel {
                 stage('Branch A') {
                     agent any
