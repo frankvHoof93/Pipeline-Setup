@@ -4,6 +4,7 @@ pipeline {
         stage('Non-Parallel Stage') {
             steps {
                 echo 'This stage will be executed first.'
+                sh 'kubectl -version'
                 checkout scm
             }
         }
